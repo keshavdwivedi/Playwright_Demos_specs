@@ -1,0 +1,46 @@
+{
+  "name": "playwright_demos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pw:test": "npx playwright test && npx playwright show-report",
+    "pw:head": "npx playwright test --project=chromium --headed && npx playwright show-report",
+    "pw:trace": "npx playwright test --ui",
+    "tests:ALL": "npx playwright test --headed",
+    "tests:WEBKIT": "npx playwright test --project=webkit --headed",
+    "tests:CHROMIUM": "npx playwright test --project=chromium --headed",
+    "tests:FIREFOX": "npx playwright test --project=firefox --headed",
+    "tests:EDGE": "npx playwright test --project='Microsoft Edge' --headed",
+    "tests:CHROME": "npx playwright test --project='Google Chrome' --headed",
+    "tests:ALL:HEADLESS": "npx playwright test",
+    "tests:WEBKIT:HEADLESS": "npx playwright test --project=webkit",
+    "tests:CHROMIUM:HEADLESS": "npx playwright test --project=chromium",
+    "tests:FIREFOX:HEADLESS": "npx playwright test --project=firefox",
+    "tests:EDGE:HEADLESS": "npx playwright test --project='Microsoft Edge'",
+    "tests:CHROME:HEADLESS": "npx playwright test --project='Google Chrome'",
+    "tests:ui-mode": "npx playwright test --ui",
+    "tests:debug-mode": "npx playwright test --debug",
+    "tests:show:reports-html": "npx playwright show-report",
+    "tests:CHROME:Tag:SANITY": "npx playwright test --project='Google Chrome' --grep=@sanity",
+    "tests:CHROME:Tag:REGRESSION": "npx playwright test --project='Google Chrome' --grep=@regression"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keshavdwivedi/Playwright_DEMO.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/keshavdwivedi/Playwright_DEMO/issues"
+  },
+  "homepage": "https://github.com/keshavdwivedi/Playwright_DEMO#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^24.10.4",
+    "playwright": "^1.57.0",
+    "typescript": "^5.9.3"
+  }
+}

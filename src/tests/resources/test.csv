@@ -1,0 +1,10 @@
+TestID,TestName,Status,ExecutionTime,Result
+1,File Upload Test,Passed,2.5s,Success
+2,Login Test,Passed,1.8s,Success
+3,Status Code Test,Passed,3.2s,Success
+4,Window Handling,Passed,2.1s,Success
+5,Menu Verification,Passed,1.5s,Success
+6,Dynamic Loading,Passed,4.0s,Success
+7,API CRUD Test,Passed,5.3s,Success
+8,Flaky Test Fix,Passed,3.7s,Success
+9,Data-Driven Test,Passed,6.2s,Success

@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",                // or "ESNext"
+    "module": "nodenext",
+    "moduleResolution": "NodeNext",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "strict": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "types": ["@playwright/test","node"]
+  },
+   "include": ["src/tests", "src"]
+}
