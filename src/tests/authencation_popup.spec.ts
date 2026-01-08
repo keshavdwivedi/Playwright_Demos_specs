@@ -2,7 +2,7 @@ import { chromium,expect,test } from "playwright/test";
 
 test('Authentication popup test', async () => {
 
-  const browser=await chromium.launch({headless:false,channel:'chrome'})
+  const browser=await chromium.launch({headless:true,channel:'chrome'})
   const context=await browser.newContext({
    httpCredentials:{
           username:"admin",

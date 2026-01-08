@@ -4,7 +4,7 @@ test.describe('iFrame handling tests', () => {
     
     test('single iframe test', async () => {
         
-        const browser:Browser=await firefox.launch({headless:false,channel:'firefox'})
+        const browser:Browser=await firefox.launch({headless:true,channel:'firefox'})
         const page:Page=await browser.newPage();
         await page.goto('https://the-internet.herokuapp.com/iframe')
         const allframes=await page.frames();
@@ -16,7 +16,7 @@ test.describe('iFrame handling tests', () => {
     });
 
     test('multiple iframe test', async () => {
-        const browser=await firefox.launch({headless:false,channel:'firefox'})
+        const browser=await firefox.launch({headless:true,channel:'firefox'})
         const page= await browser.newPage();
         await page.goto('https://www.dezlearn.com/nested-iframes-example/')
         const framecount=await page.frames();

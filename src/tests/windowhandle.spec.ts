@@ -4,7 +4,7 @@ test.describe('window handling tests', () => {
 
     test('single window test', async () => {
      
-        const browser=await chromium.launch({headless:false,channel:'chrome'})
+        const browser=await chromium.launch({headless:true,channel:'chrome'})
         const parentpage=await browser.newPage();
         await parentpage.goto('https://www.lambdatest.com/selenium-playground/window-popup-modal-demo');
         await console.log('Main page URL:', parentpage.url());

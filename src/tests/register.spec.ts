@@ -2,7 +2,7 @@ import { test,Browser, expect, Page, chromium} from "@playwright/test";
 
 test('xyz launch bank registration', async () => {
 
-  const browser:Browser=await chromium.launch({headless:false,channel:'chrome'})
+  const browser:Browser=await chromium.launch({headless:true,channel:'chrome'})
   const pages:Page=await browser.newPage();
 
   await pages.goto('https://www.way2automation.com/angularjs-protractor/banking/registrationform.html')

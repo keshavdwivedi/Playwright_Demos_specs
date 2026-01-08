@@ -6,7 +6,7 @@ import test, { Browser, webkit, Page, expect} from "playwright/test";
 test.describe('File upload testing',() => {
 
    test('single file upload testing', async () => {
-    const browser:Browser= await webkit.launch({channel:'webkit',headless:false})
+    const browser:Browser= await webkit.launch({channel:'webkit',headless:true})
     const page:Page= await browser.newPage();
     await page.goto('https://the-internet.herokuapp.com/')
     await page.getByRole('link',{name:'File Upload'}).click()
@@ -17,7 +17,7 @@ test.describe('File upload testing',() => {
 });
 
 test('multiple file uploading', async () => {
-    const browser:Browser= await webkit.launch({channel:'webkit',headless:false})
+    const browser:Browser= await webkit.launch({channel:'webkit',headless:true})
     const page:Page= await browser.newPage();
     await page.goto('https://davidwalsh.name/demo/multiple-file-upload.php')
     //uploading multiple files
@@ -36,7 +36,7 @@ test('multiple file uploading', async () => {
 
 test('file upload by buffer memory: upload by creating file at run time', async () => {
 
-    const browser:Browser= await webkit.launch({channel:'webkit',headless:false})
+    const browser:Browser= await webkit.launch({channel:'webkit',headless:true})
     const page:Page= await browser.newPage();
     await page.goto('https://davidwalsh.name/demo/multiple-file-upload.php')
     await page.locator('input#filesToUpload').setInputFiles({
@@ -48,7 +48,7 @@ test('file upload by buffer memory: upload by creating file at run time', async 
 
 test('multiple file upload by buffer memory: upload by creating file at run time', async () => {
 
-    const browser:Browser= await webkit.launch({channel:'webkit',headless:false})
+    const browser:Browser= await webkit.launch({channel:'webkit',headless:true})
     const page:Page= await browser.newPage();
     await page.goto('https://davidwalsh.name/demo/multiple-file-upload.php')
     await page.locator('input#filesToUpload').setInputFiles([

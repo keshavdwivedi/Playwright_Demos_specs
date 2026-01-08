@@ -1,7 +1,7 @@
 import test, { Browser, expect, firefox, Page } from "playwright/test";
 
 test('mouseclicks tests ', async () => {
-    const browser:Browser=await firefox.launch({headless:false,channel:'firefox'})
+    const browser:Browser=await firefox.launch({headless:true,channel:'firefox'})
     const page:Page=await browser.newPage();
     await page.goto('https://the-internet.herokuapp.com/')
     await page.getByRole('link',{name:'Context Menu'}).click();

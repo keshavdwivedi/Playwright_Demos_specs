@@ -29,7 +29,7 @@ test('xyz bank',async({page})=>{
 
 
 test('google page test using browsercontexts', async () => {
-  const browser:Browser=await firefox.launch({headless:false,channel:'firefox'})
+  const browser:Browser=await firefox.launch({headless:true,channel:'firefox'})
   //first browser context properties 
   const browser_context1=await browser.newContext();
   const page1:Page=await browser_context1.newPage();

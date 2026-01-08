@@ -1,7 +1,7 @@
 import test, { Browser, firefox,Page } from "playwright/test";
 
 test('dropdown tests', async () => {
-    const browser:Browser=await firefox.launch({channel:'firefox',headless:false})
+    const browser:Browser=await firefox.launch({channel:'firefox',headless:true})
     const page:Page=await browser.newPage();
     await page.goto('https://the-internet.herokuapp.com/')
     await page.getByRole('link',{name:'Dropdown'}).click()

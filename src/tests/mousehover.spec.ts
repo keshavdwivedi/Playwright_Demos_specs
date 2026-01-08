@@ -3,7 +3,7 @@ import { Browser, expect, Page, test, webkit } from "@playwright/test";
 test.describe('mouse hovering tests', () => {
     
     test('mouse hover test', async () => {
-    const browser:Browser=await webkit.launch({headless:false,channel:'webkit'})
+    const browser:Browser=await webkit.launch({headless:true,channel:'webkit'})
     const page:Page=await browser.newPage();
     await page.goto('https://the-internet.herokuapp.com/')
     await page.getByRole('link', { name: 'Hovers' }).click()
