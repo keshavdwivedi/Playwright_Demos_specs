@@ -23,7 +23,7 @@ test.describe('mouse hovering tests', () => {
 });
 
 test('focus on element and type using character by character or click on it', async () => {
-     const browser:Browser=await webkit.launch({headless:false,channel:'webkit'})
+     const browser:Browser=await webkit.launch({headless:true,channel:'webkit'})
      const page:Page=await browser.newPage();
      await page.goto('https://the-internet.herokuapp.com/')
      await page.getByRole('link', { name: 'Form Authentication' }).click()

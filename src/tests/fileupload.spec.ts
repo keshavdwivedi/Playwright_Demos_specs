@@ -1,8 +1,6 @@
 import path from "path";
 import test, { Browser, webkit, Page, expect} from "playwright/test";
 
-
-
 test.describe('File upload testing',() => {
 
    test('single file upload testing', async () => {
@@ -10,7 +8,9 @@ test.describe('File upload testing',() => {
     const page:Page= await browser.newPage();
     await page.goto('https://the-internet.herokuapp.com/')
     await page.getByRole('link',{name:'File Upload'}).click()
-    await page.locator('input#file-upload').setInputFiles('/Users/keshavmac/Cy-Workspace/Playwright_demos/src/tests/resources/test.csv')
+    const filePath = path.join(process.cwd(), 'src', 'tests', 'resources', 'test.csv');
+    await page.locator("input#file-upload").setInputFiles(filePath);
+   // await page.locator('input#file-upload').setInputFiles('/Users/keshavmac/Cy-Workspace/Playwright_demos/src/tests/resources/test.csv')
     await page.locator('input#file-submit').click()
     await expect(page.getByRole('heading',{name:'File Uploaded!'})).toBeVisible()
     await browser.close()
@@ -20,10 +20,22 @@ test('multiple file uploading', async () => {
     const browser:Browser= await webkit.launch({channel:'webkit',headless:true})
     const page:Page= await browser.newPage();
     await page.goto('https://davidwalsh.name/demo/multiple-file-upload.php')
-    //uploading multiple files
-    await page.locator('input#filesToUpload').
-        setInputFiles([
-        path.join("/Users/keshavmac/Cy-Workspace/Playwright_demos/src/tests/resources/test.csv"),path.join('/Users/keshavmac/Cy-Workspace/Playwright_demos/src/tests/resources/test.json'),path.join('/Users/keshavmac/Cy-Workspace/Playwright_demos/src/tests/resources/test.txt')])
+
+    const root = process.cwd();
+
+    const files = [
+    path.resolve(root, 'src', 'tests', 'resources', 'test.csv'),
+    path.resolve(root, 'src', 'tests', 'resources', 'test.json'),
+    path.resolve(root, 'src', 'tests', 'resources', 'test.txt'),
+  ];
+
+  await page.locator('input#filesToUpload').setInputFiles(files)
+
+
+    //uploading multiple files (absolute path of system)
+    //    await page.locator('input#filesToUpload').
+    //     setInputFiles([
+    //     path.join("/Users/keshavmac/Cy-Workspace/Playwright_demos/src/tests/resources/test.csv"),path.join('/Users/keshavmac/Cy-Workspace/Playwright_demos/src/tests/resources/test.json'),path.join('/Users/keshavmac/Cy-Workspace/Playwright_demos/src/tests/resources/test.txt')])
    
         /*deselecting all uploaded files
    await page.locator('input#filesToUpload').setInputFiles([]);*/

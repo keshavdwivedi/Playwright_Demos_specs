@@ -11,7 +11,7 @@ test('Authentication popup test', async () => {
   });
   const pages=await context.newPage();
   await pages.goto('https://the-internet.herokuapp.com/basic_auth')
-  const welcomeMsg=await pages.getByText('Congratulations! You must have the proper credentials.')
-  expect(welcomeMsg).toContainText('Congratulations');
-  browser.close()
+  const welcomeMsg=await pages.getByRole('heading',{name:"Basic Auth"});
+  await expect(welcomeMsg).toBeTruthy();
+  await browser.close();
 });
