@@ -16,7 +16,7 @@ test.describe('window handling tests', () => {
   ]);
   await newPage.waitForLoadState(); // Ensures the new page is fully loaded
   console.log('New tab URL:', newPage.url());
-  await expect(newPage).toHaveTitle('LambdaTest (@lambdatesting) / X'); 
+  await expect(newPage).toHaveTitle('Profile / X'); 
 
    await parentpage.bringToFront();
   console.log('Back to main page:', parentpage.url());
