@@ -22,7 +22,7 @@ export default defineConfig({
   /* Retry on CI only */
   //retries: process.env.CI:? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 1 : 2,
   
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
@@ -58,15 +58,15 @@ export default defineConfig({
       use: { ...devices['Desktop Safari'] },
     },
 
-    /* Test against mobile viewports. */
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: { ...devices['Pixel 5'] },
-    // },
-    // {
-    //   name: 'Mobile Safari',
-    //   use: { ...devices['iPhone 12'] },
-    // },
+    /* Test against mobile viewports, click on devices to open list of all mobile types supported */
+    {
+      name: 'Mobile Chrome',
+      use: { ...devices['Galaxy S24'] },
+    },
+    {
+      name: 'Mobile Safari',
+      use: { ...devices['iPhone 15 Pro Max'] },
+    },
 
     /* Test against branded browsers. */
     // {
