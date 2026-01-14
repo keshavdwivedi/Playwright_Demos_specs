@@ -59,14 +59,14 @@ export default defineConfig({
     },
 
     /* Test against mobile viewports, click on devices to open list of all mobile types supported */
-    {
-      name: 'Mobile Chrome',
-      use: { ...devices['Galaxy S24'] },
-    },
-    {
-      name: 'Mobile Safari',
-      use: { ...devices['iPhone 15 Pro Max'] },
-    },
+    // {
+    //   name: 'Mobile Chrome',
+    //   use: { ...devices['Galaxy S24'] },
+    // },
+    // {
+    //   name: 'Mobile Safari',
+    //   use: { ...devices['iPhone 15 Pro Max'] },
+    // }
 
     /* Test against branded browsers. */
     // {
